@@ -3,4 +3,6 @@ Rails.application.routes.draw do
     resources :items, except: :index
     resources :locations
   end
+  
+  root "inventories#index"
 end
