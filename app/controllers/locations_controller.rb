@@ -1,4 +1,4 @@
-class LocationController < ApplicationController
+class LocationsController < ApplicationController
   
   def index
     @inventory = Inventory.find(params[:inventory_id])
