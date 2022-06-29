@@ -1,1 +1,18 @@
-<%= link_to inventory.name, inventory_items_path(inventory) %> || <%= link_to "Edit", edit_inventory_path(inventory) %> || <%= link_to "Manage Locations", inventory_locations_path(inventory) %>
+<div class="relative overflow-x-auto shadow-md">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    </thead>
+    <tbody>
+      <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
+        <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+          <%= link_to inventory.name, inventory_items_path(inventory) %>
+        </th>
+        <td class="px-6 py-4">
+          <%= link_to "Manage Locations", inventory_locations_path(inventory) %>
+          <td class="px-6 py-4 text-right">
+          <%= link_to "Edit", edit_inventory_path(inventory), class:"font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
+          </td>
+      </tr>
+  </table>
+</div>
+
