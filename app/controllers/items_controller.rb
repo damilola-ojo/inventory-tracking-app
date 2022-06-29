@@ -1,5 +1,10 @@
 class ItemsController < ApplicationController
-  
+
+  def index
+    @inventory = Inventory.find(params[:inventory_id])
+    @items = @inventory.items.all
+  end
+
   def show
     @item = Item.find(params[:id])
     @inventory = Inventory.find(params[:inventory_id])
