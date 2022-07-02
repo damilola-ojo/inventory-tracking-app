@@ -1,5 +1,5 @@
-# Private Events
-This is a project application for [*The Odin Project, Ruby on Rails Fullstack Path*](https://www.theodinproject.com/)
+# Inventory Tracking App
+A Simple Inventory Tracking App
 
 ## Main Features
 
