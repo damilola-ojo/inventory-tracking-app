@@ -1,0 +1,11 @@
+<%= form_with model: [@inventory, @item] do |item_form| %>
+
+  <%= item_form.label :name %>
+  <%= item_form.text_field :name %> <br>
+
+  <%= item_form.label :quantity %>
+  <%= item_form.number_field :quantity %><br>
+
+  <%= item_form.submit %>
+
+<% end %>

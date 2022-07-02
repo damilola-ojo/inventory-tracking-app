@@ -21,7 +21,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @inventory = Inventory.find(params[:id])
+    @inventory = Inventory.find(params[:inventory_id])
     @location = @inventory.locations.build(location_params)
 
     if @location.save
@@ -37,7 +37,7 @@ class LocationsController < ApplicationController
     if @location.update(location_params)
       redirect_to inventory_locations_path
     else 
-      render :edit, status: :unporcessable_entity
+      render :edit, status: :unprocessable_entity
     end
   end
 

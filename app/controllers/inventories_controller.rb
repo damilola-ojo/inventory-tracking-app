@@ -6,6 +6,8 @@ class InventoriesController < ApplicationController
 
   def new
     @inventory = Inventory.new
+
+    @inventory.build_base_location
   end
 
   def edit
@@ -25,12 +27,6 @@ class InventoriesController < ApplicationController
   def update
     @inventory = Inventory.find(params[:id])
 
-    unless params[:inventory][:base_location_id] == @inventory.base_location_id 
-      new_base_location = @inventory.locations.find(params[:inventory][:base_location_id])
-
-      @inventory.change_base_location_to(new_base_location)
-    end
-
     if @inventory.update(inventory_params)
       redirect_to inventories_path
     else
@@ -48,6 +44,6 @@ class InventoriesController < ApplicationController
 
   private
     def inventory_params
-      params.required(:inventory).permit(:id, :name)
+      params.required(:inventory).permit(:id, :name, base_location_attributes: [:id, :name, :address, :city, :country])
     end
 end

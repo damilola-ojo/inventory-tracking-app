@@ -1,0 +1,21 @@
+<%= form_with model: [@inventory, @location] do |location_form| %>
+
+  <%= location_form.label :name %>
+  <%= location_form.text_field :name %><br>
+
+  <%= location_form.label :address %>
+  <%= location_form.text_field :address %><br>
+
+  <%= location_form.label :city %>
+  <%= location_form.text_field :city %><br>
+
+  <%= location_form.label :country %>
+  <%= location_form.text_field :country %><br>
+
+  <%= location_form.submit %>
+
+<% end %>
+
+
+
+  

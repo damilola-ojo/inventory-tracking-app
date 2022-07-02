@@ -1,0 +1,28 @@
+<%= form_with model: @inventory do |inventory_form| %>
+  <%= inventory_form.label :name %>
+  <%= inventory_form.text_field :name %><br>
+
+  <% if @inventory.persisted? %>
+    <%= inventory_form.label :base_location_id, "Base Location" %>
+    <%= inventory_form.select :base_location, options_from_collection_for_select(@inventory.locations, "id", "name", @inventory.base_location.id), {} %><br>
+  <% else %>
+    <h1>
+    Inventory
+    </h1>
+    <%= inventory_form.fields_for :base_location, @inventory.base_location do |location_fields| %>
+
+      <%= location_fields.label :name %>
+      <%= location_fields.text_field :name %><br>
+
+      <%= location_fields.label :address %>
+      <%= location_fields.text_field :address %><br>
+
+      <%= location_fields.label :city %>
+      <%= location_fields.text_field :city %><br>
+
+      <%= location_fields.label :country %>
+      <%= location_fields.text_field :country %>
+    <% end %>
+  <% end %>
+<%= inventory_form.submit %>
+<% end %>
